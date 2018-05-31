@@ -1,0 +1,86 @@
+@startuml
+
+class Palco {
+  -Integer quantidadePortas
+  -ArrayList : Porta[] portas
+  +getQuantidadePortas()
+  +setQuantidadePortas()  
+}
+
+class Porta {
+  -Boolean monstro
+  -Premio premio
+  +isMonstro()
+  +setMonstro()
+  +getPremio()
+  +setPremio()
+}
+
+class Jogador {
+  -String nome
+  -Integer pontuacao
+  +getNome()
+  +setNome()
+  +getPontuacao()
+  +setPontuacao()
+}
+
+class Jogo {
+  -Jogador jogador1
+  -Jogador jogador2
+  +getJogador1()
+  +setJogador1()
+  +getJogador2()
+  +setJogador2()
+}
+
+class Partida { 
+  -ArrayList : Premio[] premios
+  -Palco palco
+  -Level level
+  +getPalco() 
+  +setPalco()
+  +getPremios()
+  +setPremios()
+}
+
+class Level {
+  -quantidadeMonstros
+  -nivelDificuldade 
+  +getQuantidadeMonstros()
+  +setQuantidadeMonstros()
+  +getNivelDificuldade()
+  +setNivelDificuldade()
+}
+
+class Conexao {
+}
+
+class Premio {
+  -tipoPremio
+  +getTipoPremio()
+  +setTipoPremio()
+}
+
+class Apresentador {
+}
+
+class Embaralhador {
+}
+
+left to right direction
+Apresentador -left-> Palco
+Apresentador -left-> Porta
+Embaralhador -left-> Palco
+Embaralhador -left-> Porta
+Jogo -down- Conexao
+Jogador --> Palco
+Jogador --> Jogo
+Jogador --> Partida
+Jogo --> Partida
+Partida --> Level
+Partida --> Palco
+Palco -down-> Porta
+Porta -up-> Premio
+
+@enduml
