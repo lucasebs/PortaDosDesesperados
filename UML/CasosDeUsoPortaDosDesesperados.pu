@@ -1,0 +1,15 @@
+@startuml
+left to right direction
+Embaralhador << Aplicação >>
+Embaralhador --> (Embaralhar posições de prêmios)
+
+Apresentador << Aplicação >>
+Apresentador --> (Descrever Palco)
+Apresentador --> (Indicar Jogador da Vez)
+Apresentador --> (Descrever "Prêmio" da Porta)
+
+Jogador << Usuário >>
+Jogador --> (Iniciar um Jogo)
+Jogador --> (Escolher nome)
+Jogador --> (Escolher/Abrir Porta)
+@enduml
