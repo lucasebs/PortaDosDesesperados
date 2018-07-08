@@ -20,9 +20,9 @@ public class Jogo {
         this.jogador2 = jogador2;
     }
 
-    public void inicio() {
-        System.out.println(boasvindas());
-        System.out.print("Digite 'EU' para começar: ");
+    public String inicio() {
+//        System.out.print("Digite 'EU' para começar: ");
+        return "Digite 'EU' para começar: ";
     }
 
     public String boasvindas() {
