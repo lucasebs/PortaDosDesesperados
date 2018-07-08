@@ -6,6 +6,7 @@ public class App {
 
         Jogo jogo = new Jogo();
 
+        System.out.println(jogo.boasvindas());
         jogo.inicio();
 
     }
