@@ -3,9 +3,14 @@ package br.com.portadosdesesperados;
 import java.util.ArrayList;
 
 public class Partida {
-    private ArrayList<Premio> premios = new ArrayList<Premio>();
+    private ArrayList<Premio> premios = new ArrayList<>();
     private Palco palco;
     private Level level;
+
+    public Partida() {
+        this.palco = new Palco(4, new Level(1,"1"));
+
+    }
 
     public ArrayList<Premio> getPremios() {
         return premios;
