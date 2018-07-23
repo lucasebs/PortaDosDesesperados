@@ -1,21 +1,21 @@
 package br.com.portadosdesesperados;
 
 public class Porta {
-    private Integer numero;
+    private String numero;
     private Boolean monstro;
     private Premio premio;
 
-    public Porta(Integer numero, Boolean monstro, Premio premio) {
+    public Porta(String numero, Boolean monstro, Premio premio) {
         this.numero = numero;
         this.monstro = monstro;
         this.premio = premio;
     }
 
-    public Integer getNumero() {
+    public String getNumero() {
         return this.numero;
     }
 
-    public void setNumero(Integer numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
