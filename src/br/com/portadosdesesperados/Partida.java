@@ -8,7 +8,7 @@ public class Partida {
     private Level level;
 
     public Partida() {
-        Level level = new Level(1,"1");
+        Level level = new Level(1,"Fácil demais!");
         this.palco = new Palco(5, level);
         this.level = level;
     }
@@ -25,6 +25,17 @@ public class Partida {
         Porta porta = palco.getPortas().get(numeroDaPorta - 1);
         return porta;
     }
+
+    public void aumentarLevel() {
+        if ( this.level.getQuantidadeMonstros() == 1 ) {
+            this.level = new Level(2, "Tranquilo");
+        } else if ( this.level.getQuantidadeMonstros() == 2 ) {
+            this.level = new Level(3, "Ruim");
+        } else if ( this.level.getQuantidadeMonstros() == 3 ) {
+            this.level = new Level(4, "Impossível");
+        }
+    };
+
 
     public Palco getPalco() {
         return palco;
