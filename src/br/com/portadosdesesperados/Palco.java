@@ -1,6 +1,7 @@
 package br.com.portadosdesesperados;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Palco {
     private Integer quantidadePortas;
@@ -19,8 +20,9 @@ public class Palco {
                     new Premio(listaPremios.get(this.numeroAleatorio(0,listaPremios.size())))));
         }
 
-        for (int i = 1; i <= quantidadeMonstros; i++) {
-            portas.get(this.numeroAleatorio(1,quantidadeMonstros)).setMonstro(true);
+        for (int i = 0; i < quantidadeMonstros; i++) {
+//            System.out.println(this.numeroAleatorio(1,quantidadePortas-1));
+            portas.get(this.numeroAleatorio(1,quantidadePortas-1)).setMonstro(true);
         }
 
     }
@@ -71,9 +73,12 @@ public class Palco {
 //    }
 
     public Integer numeroAleatorio(int min, int max){
-        int randomNum = min + (int)(Math.random() * (max - min));
+//        int randomNum = min + (int)(Math.random() * (max - min));
 
-        return randomNum;
+        Random random = new Random();
+
+        return random.ints(min,(max+1)).findFirst().getAsInt();
+//        return randomNum;
     }
 
     @Override
