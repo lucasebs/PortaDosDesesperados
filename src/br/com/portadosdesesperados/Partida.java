@@ -8,7 +8,7 @@ public class Partida {
     private Level level;
 
     public Partida() {
-        this.palco = new Palco(4, new Level(1,"1"));
+        this.palco = new Palco(5, new Level(1,"1"));
     }
 
 //    public ArrayList<Premio> getPremios() {
