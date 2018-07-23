@@ -14,11 +14,13 @@ public class Palco {
         Integer quantidadeMonstros = level.getQuantidadeMonstros();
 
         for (int i = 1; i <= quantidadePortas; i++) {
-            portas.add(new Porta(String.valueOf(i), false,new Premio(listaPremios.get(i-1))));
+            portas.add(new Porta(String.valueOf(i),
+                    false,
+                    new Premio(listaPremios.get(this.numeroAleatorio(0,listaPremios.size())))));
         }
 
         for (int i = 1; i <= quantidadeMonstros; i++) {
-            portas.get(this.posicaoMonstro(1,quantidadeMonstros)).setMonstro(true);
+            portas.get(this.numeroAleatorio(1,quantidadeMonstros)).setMonstro(true);
         }
 
     }
@@ -32,6 +34,20 @@ public class Palco {
         this.listaPremios.add("Televisao");
         this.listaPremios.add("Moto");
         this.listaPremios.add("Carro");
+        this.listaPremios.add("Viagem");
+        this.listaPremios.add("Celular");
+        this.listaPremios.add("Notebook");
+        this.listaPremios.add("Passeio de balão");
+        this.listaPremios.add("Salto de paraquedas");
+        this.listaPremios.add("Tablet");
+        this.listaPremios.add("Óculos");
+        this.listaPremios.add("Bicicleta");
+        this.listaPremios.add("Prancha de surf");
+        this.listaPremios.add("Skate");
+        this.listaPremios.add("Patins");
+        this.listaPremios.add("Videogame");
+        this.listaPremios.add("Cafeteira");
+
     }
 
     public void setQuantidadePortas(Integer quantidadePortas) {
@@ -54,7 +70,7 @@ public class Palco {
 //        this.montros = montros;
 //    }
 
-    public Integer posicaoMonstro(int min, int max){
+    public Integer numeroAleatorio(int min, int max){
         int randomNum = min + (int)(Math.random() * (max - min));
 
         return randomNum;

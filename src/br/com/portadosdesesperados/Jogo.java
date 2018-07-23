@@ -48,7 +48,7 @@ public class Jogo {
                 System.out.println("- É um monstro!!!\n");
 
             } else {
-                System.out.println("- É um Prêmio!!!!\n- Prêmio: " + porta.getPremio().getTipoPremio() + "\n");
+                System.out.println("- É um Prêmio!!!!\n  Prêmio: " + porta.getPremio().getTipoPremio() + "\n");
             }
         }
 
