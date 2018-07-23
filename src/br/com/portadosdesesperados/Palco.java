@@ -12,17 +12,13 @@ public class Palco {
         this.setQuantidadePortas(quantidadePortas);
         Integer lvl = level.getQuantidadeMonstros();
 
-
-
-
         for (int i = 1; i <= quantidadePortas; i++) {
             portas.add(new Porta(i, true,new Premio(listaPremios.get(i-1))));
         }
     }
-
-    public Integer getQuantidadePortas() {
-        return quantidadePortas;
-    }
+//    public Integer getQuantidadePortas() {
+//        return quantidadePortas;
+//    }
 
     public void createListaPremios() {
         this.listaPremios.add("Pente");
@@ -50,6 +46,7 @@ public class Palco {
         for (Porta porta : portas) {
             mensagem += "|" + porta.getNumero() + "| " ;
         }
+        mensagem += "\n";
         return mensagem;
     }
 }
