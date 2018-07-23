@@ -26,7 +26,7 @@ public class Jogo {
 //        System.out.print("Digite 'EU' para começar: ");
         Partida partida = new Partida();
         Palco palco = partida.getPalco();
-        jogador.setPontuacao(0);
+//        jogador.setPontuacao(0);
 
         System.out.println("O jogo funciona da seguinte forma:\n" +
                 "- Você escolhe uma porta do palco\n" +
@@ -39,7 +39,9 @@ public class Jogo {
 
         for (int i = 1; i <= palco.getQuantidadePortas(); i++) {
             System.out.println(palco);
+            System.out.println("Nível: " + partida.getLevel().getNivelDificuldade() + "\n");
             System.out.println(jogador);
+
 
             System.out.print("Sérgio Mallandro: 'Qual porta você quer?'\n\nDigite o número da porta: ");
             Scanner sc = new Scanner(System.in);
@@ -47,17 +49,19 @@ public class Jogo {
 
             porta.setNumero("X");
             if (porta.isMonstro()) {
-                System.out.println("\n- É um monstro!!!\n");
+                System.out.println("\n- É um monstro!!! Você perdeu!\n");
                 break;
 
             } else {
                 System.out.println("\n- É um Prêmio!!!!\n  Prêmio: " + porta.getPremio().getTipoPremio() + "\n");
                 jogador.setPontuacao(jogador.getPontuacao() + (10 * partida.getLevel().getQuantidadeMonstros()));
+                partida.aumentarLevel();
             }
         }
 
+        System.out.println(palco);
         System.out.println("\nAcabou o jogo!\n" +
-                           "Você fez \" + jogador.getPontuacao() + \"pontos!!!");
+                           "Você fez " + jogador.getPontuacao() + " pontos!!!");
 
 
     }
