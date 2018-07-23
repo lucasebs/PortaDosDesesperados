@@ -43,7 +43,7 @@ public class Jogo {
             System.out.println(jogador);
 
 
-            System.out.print("Sérgio Mallandro: 'Qual porta você quer?'\n\nDigite o número da porta: ");
+            System.out.print("Sérgio Mallandro: 'Qual porta você quer?'\n- Digite o número da porta: ");
             Scanner sc = new Scanner(System.in);
             Porta porta = partida.escolherPorta(sc.nextInt());
 

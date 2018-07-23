@@ -8,7 +8,7 @@ public class Partida {
     private Level level;
 
     public Partida() {
-        Level level = new Level(1,"Fácil demais!");
+        Level level = new Level(1,"Facil demais!");
         this.palco = new Palco(5, level);
         this.level = level;
     }

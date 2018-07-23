@@ -17,7 +17,7 @@ public class Palco {
         for (int i = 1; i <= quantidadePortas; i++) {
             portas.add(new Porta(String.valueOf(i),
                     false,
-                    new Premio(listaPremios.get(this.numeroAleatorio(0,listaPremios.size())))));
+                    new Premio(listaPremios.get(this.numeroAleatorio(0,listaPremios.size()-1)))));
         }
 
         for (int i = 0; i < quantidadeMonstros; i++) {
@@ -49,8 +49,11 @@ public class Palco {
         this.listaPremios.add("Patins");
         this.listaPremios.add("Videogame");
         this.listaPremios.add("Cafeteira");
-
     }
+
+//    public ArrayList<String> getListaPremios() {
+//        return listaPremios;
+//    }
 
     public void setQuantidadePortas(Integer quantidadePortas) {
         this.quantidadePortas = quantidadePortas;
@@ -60,9 +63,9 @@ public class Palco {
         return portas;
     }
 
-    public void setPortas(ArrayList<Porta> portas) {
-        this.portas = portas;
-    }
+//    public void setPortas(ArrayList<Porta> portas) {
+//        this.portas = portas;
+//    }
 
 //    public ArrayList<Integer> getMontros() {
 //        return montros;
@@ -80,6 +83,7 @@ public class Palco {
         return random.ints(min,(max+1)).findFirst().getAsInt();
 //        return randomNum;
     }
+
 
     @Override
     public String toString() {
