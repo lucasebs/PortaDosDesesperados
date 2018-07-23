@@ -22,10 +22,11 @@ public class Jogo {
 //        this.jogador2 = jogador2;
 //    }
 
-    public void inicio() {
+    public void inicio(Jogador jogador) {
 //        System.out.print("Digite 'EU' para começar: ");
         Partida partida = new Partida();
         Palco palco = partida.getPalco();
+        jogador.setPontuacao(0);
 
         System.out.println("O jogo funciona da seguinte forma:\n" +
                 "- Você escolhe uma porta do palco\n" +
@@ -34,25 +35,29 @@ public class Jogo {
                 "- Se for um monstro você se vira\n\n" +
                 "Obs:\n1 - Existem níveis diferentes de dificuldade.\n" +
                 "2 - Quanto maior o nível mais monstros!!!!!\n\n" +
-                "Boa sorte!!!");
+                "Boa sorte!!!\n");
 
         for (int i = 1; i <= palco.getQuantidadePortas(); i++) {
             System.out.println(palco);
+            System.out.println(jogador);
 
-            System.out.print("Sérgio Malandro: 'Qual porta você quer?'\n\nDigite o número da porta: ");
+            System.out.print("Sérgio Mallandro: 'Qual porta você quer?'\n\nDigite o número da porta: ");
             Scanner sc = new Scanner(System.in);
             Porta porta = partida.escolherPorta(sc.nextInt());
 
             porta.setNumero("X");
             if (porta.isMonstro()) {
-                System.out.println("- É um monstro!!!\n");
+                System.out.println("\n- É um monstro!!!\n");
+                break;
 
             } else {
-                System.out.println("- É um Prêmio!!!!\n- Prêmio: " + porta.getPremio().getTipoPremio() + "\n");
+                System.out.println("\n- É um Prêmio!!!!\n  Prêmio: " + porta.getPremio().getTipoPremio() + "\n");
+                jogador.setPontuacao(jogador.getPontuacao() + (10 * partida.getLevel().getQuantidadeMonstros()));
             }
         }
 
-        System.out.println("\nAcabou o jogo!");
+        System.out.println("\nAcabou o jogo!\n" +
+                           "Você fez \" + jogador.getPontuacao() + \"pontos!!!");
 
 
     }
@@ -60,10 +65,10 @@ public class Jogo {
     public String boasvindas() {
         String mensagem;
         mensagem = "\n'Quem quer abrir a Porta dos Desesperados?'\n";
-        mensagem += "                        MALANDRO, Serginho\n\n";
-        mensagem += "-------------------------------------------\n";
-        mensagem += "    Bem vindo a Porta dos Desesperados! \n";
-        mensagem += "-------------------------------------------\n";
+        mensagem += "                            MALLANDRO, Sergio\n\n";
+        mensagem += "---------------------------------------------\n";
+        mensagem += "     Bem vindo a Porta dos Desesperados! \n";
+        mensagem += "---------------------------------------------\n";
         mensagem += "\nDigite 'EU'(ou seu nome) para começar: ";
         return mensagem;
     }
@@ -76,9 +81,9 @@ public class Jogo {
         Jogador jogador = new Jogador(sc.next());
 
         System.out.println("\nBem vindo, " + jogador.getNome() + "! Vamos ao jogo!\n\n" +
-                "-------------------------------------------\n");
+                "---------------------------------------------\n");
 
-        jogo.inicio();
+        jogo.inicio(jogador);
     }
 
 }
