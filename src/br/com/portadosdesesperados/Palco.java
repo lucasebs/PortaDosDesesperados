@@ -78,13 +78,15 @@ public class Palco {
 
     @Override
     public String toString() {
-        String mensagem = "-------------\n" +
-                          "- Palco!!!!\n" +
-                          "-------------\n\n";
+        String mensagem = "---------------------------------------------\n" +
+                          "           Porta Dos Desesperados!           \n" +
+                          "---------------------------------------------\n\n" +
+                          "                -  Portas  -                 \n" +
+                          "            ";
         for (Porta porta : portas) {
             mensagem += "|" + porta.getNumero() + "| " ;
         }
-        mensagem += "\n";
+        mensagem += " \n";
         return mensagem;
     }
 }

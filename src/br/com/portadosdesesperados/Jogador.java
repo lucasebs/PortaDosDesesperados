@@ -2,7 +2,7 @@ package br.com.portadosdesesperados;
 
 public class Jogador {
     private String nome;
-    private Integer pontuacao;
+    private Integer pontuacao = 0;
 
     public Jogador(String nome) {
         this.nome = nome;
@@ -21,5 +21,10 @@ public class Jogador {
 
     public void setPontuacao(Integer pontuacao) {
         this.pontuacao = pontuacao;
+    }
+
+    @Override
+    public String toString() {
+        return "Nome: " + this.nome + "\nPontuação: " + this.pontuacao + "\n";
     }
 }
