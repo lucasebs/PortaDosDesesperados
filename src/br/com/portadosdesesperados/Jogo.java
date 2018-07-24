@@ -77,6 +77,10 @@ public class Jogo {
         return mensagem;
     }
 
+    public Integer escolheModoDeJogo() {
+        return null;
+    }
+
     public static void main(String[] args) {
         Jogo jogo = new Jogo();
 
@@ -86,6 +90,8 @@ public class Jogo {
 
         System.out.println("\nBem vindo, " + jogador.getNome() + "! Vamos ao jogo!\n\n" +
                 "---------------------------------------------\n");
+
+        Conexao conexao = new Conexao();
 
         jogo.inicio(jogador);
     }
