@@ -22,7 +22,7 @@ public class Palco {
 
         for (int i = 0; i < quantidadeMonstros; i++) {
 //            System.out.println(this.numeroAleatorio(1,quantidadePortas-1));
-            portas.get(this.numeroAleatorio(1,quantidadePortas-1)).setMonstro(true);
+            portas.get(this.numeroAleatorio(0,quantidadePortas-1)).setMonstro(true);
         }
 
     }

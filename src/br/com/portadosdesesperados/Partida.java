@@ -22,6 +22,11 @@ public class Partida {
 //    }
 
     public Porta escolherPorta(Integer numeroDaPorta) {
+        if (numeroDaPorta > this.palco.getQuantidadePortas()){
+            System.out.println("Porta Invalida");
+
+
+        }
         Porta porta = palco.getPortas().get(numeroDaPorta - 1);
         return porta;
     }
