@@ -2,7 +2,8 @@ package br.com.portadosdesesperados;
 
 import java.io.*;
 import java.net.Socket;
-import java.util.Date;
+import java.net.SocketException;
+import java.util.Scanner;
 
 public class Client implements Transfer {
     private Socket sock;
@@ -11,16 +12,21 @@ public class Client implements Transfer {
 
 
     @Override
-    public void transmitir() throws IOException {
+    public void transmitir(String mensagem) throws IOException {
         PrintWriter pout = new PrintWriter(this.sock.getOutputStream(), true);
-        pout.println(new Date().toString() + " Lucas"  );
+        pout.println(mensagem);
     }
 
     @Override
-    public String receber() throws IOException {
+    public String receber() throws IOException, SocketException {
+        this.in = this.sock.getInputStream();
+        if (in == null){
+            return null;
+        }
+        this.bin = new BufferedReader(new InputStreamReader(this.in));
         String line = this.bin.readLine();
-        System.out.println("O servidor me disse:" + line);
-        return null;
+        return line + "\n";
+
     }
 
     @Override
@@ -31,9 +37,7 @@ public class Client implements Transfer {
     @Override
     public void conectar() throws IOException {
         System.out.println("== Cliente Iniciado ==\n");
-        this.sock = new Socket("192.168.15.7",6013);
-        this.in = this.sock.getInputStream();
-        this.bin = new BufferedReader(new InputStreamReader(this.in));
+        this.sock = new Socket("192.168.15.16",6013);
         System.out.println("=== Cliente Conectado ===\n");
     }
 }

@@ -1,9 +1,6 @@
 package br.com.portadosdesesperados;
 
 import java.io.*;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.Date;
 import java.util.Scanner;
 
 public class Conexao {
@@ -27,10 +24,10 @@ public class Conexao {
                 "2 - Cliente\n");
         System.out.print("$");
         Scanner sc = new Scanner(System.in);
-
-        if (sc.nextInt() == 1 || sc.next().equalsIgnoreCase("servidor")) {
+        Integer tipo = sc.nextInt();
+        if (tipo == 1 ) {
             this.transfer = new Server();
-        } else if (sc.nextInt() == 2 || sc.next().equalsIgnoreCase("cliente")) {
+        } else if (tipo == 2 ) {
             this.transfer = new Client();
         }
     }

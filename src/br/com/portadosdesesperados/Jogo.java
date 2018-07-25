@@ -1,86 +1,9 @@
 package br.com.portadosdesesperados;
 
 import java.io.IOException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Jogo {
-
-    public void inicio_solo(Jogador jogador) {
-        Partida partida = new Partida();
-        Palco palco = partida.getPalco();
-        Boolean vencedor = false;
-
-        System.out.println("\nModo Solo\n");
-
-        System.out.println(this.regras());
-
-        this.aguardar(5);
-
-        System.out.println("Pressione 'Enter' para começar...");
-        Scanner enter = new Scanner(System.in);
-        enter.nextLine();
-
-        for1:
-        for (int i = 1; i < palco.getQuantidadePortas() ; i++) {
-            Boolean numeroInvalido = true;
-
-            System.out.println(palco);
-            this.aguardar(1);
-            System.out.println("O Nível é " + partida.getLevel().getNivelDificuldade() + "\n");
-            this.aguardar(1);
-            System.out.println(jogador);
-
-            this.aguardar(2);
-            System.out.println("Sérgio Mallandro: 'Qual porta você quer?");
-            while (numeroInvalido) {
-                numeroInvalido = false;
-
-                System.out.print("- Digite o número da porta: ");
-                Scanner sc = new Scanner(System.in);
-
-                try {
-                    Porta porta = partida.escolherPorta(sc.nextInt());
-                    porta.setNumero("X");
-                    try {
-                        System.out.println(partida.abrirPorta(jogador, porta));
-                    } catch (Exception ex) {
-                        System.out.println(ex.getMessage());
-                        break for1;
-                    }
-
-                } catch (InputMismatchException ex ) {
-                    System.out.println("\nMuita calma nesta hora!!! Porta Inválida! Escolha outra porta!\n");
-                } catch (Exception ex){
-                    numeroInvalido = true;
-                    System.out.println("\nMuita calma nesta hora!!! " + ex.getMessage() + " Escolha outra porta!\n");
-                }
-                this.aguardar(1);
-            }
-            this.aguardar(1);
-            if (i == 4) {
-                vencedor = true;
-            }
-        }
-        this.aguardar(1);
-
-        System.out.println(palco);
-
-        if (vencedor) {
-            System.out.println("\nAcabou o jogo! Você venceu!!!");
-        } else {
-            System.out.println("\nAcabou o jogo!");
-        }
-        System.out.println("Você fez " + jogador.getPontuacao() + " pontos!!!");
-    }
-
-    private void inicio_player_vs_player(Jogador jogador, Conexao conexao) {
-
-    }
-
-    private void inicio_survivor(Jogador jogador, Conexao conexao) {
-
-    }
 
     public String boasvindas() {
         return  "\n'Quem quer abrir a Porta dos Desesperados?'\n" +
@@ -91,7 +14,7 @@ public class Jogo {
                 "\nDigite 'EU'(ou seu nome) para começar: ";
     }
 
-    public String regras() {
+    public static String regras() {
         return "O jogo funciona da seguinte forma:\n" +
                 "- Você escolhe uma porta do palco\n" +
                 "- Dentro da porta tem um monstro ou um prêmio\n" +
@@ -102,7 +25,7 @@ public class Jogo {
                 "Boa sorte!!!\n";
     }
 
-    public void aguardar(Integer segundos) {
+    public static void aguardar(Integer segundos) {
         try {
             Thread.sleep(segundos * 1000);
         } catch (Exception e) {
@@ -116,17 +39,18 @@ public class Jogo {
                 "\n2 - Multiplayer" +
                 "\n = ");
         Scanner sc = new Scanner(System.in);
-        if (sc.nextInt() == 1){
+        Integer modo = sc.nextInt();
+        if (modo == 1){
             return 1;
-        } else if (sc.nextInt() == 2) {
+        } else if (modo == 2) {
             System.out.print("Qual o modo Multiplayer:" +
                     "\n1 - Player vs Player" +
                     "\n2 - Survivor" +
                     "\n = ");
-            Scanner mp = new Scanner(System.in);
-            if (mp.nextInt() == 1){
+            Integer multiplayer = sc.nextInt();
+            if (multiplayer == 1){
                 return 2;
-            } else if (mp.nextInt() == 2) {
+            } else if (multiplayer == 2) {
                 return 3;
             } else {
                 throw new Exception("Modo de Jogo Invalido!");
@@ -168,18 +92,14 @@ public class Jogo {
         try {
             Integer modoDeJogo = jogo.escolheModoDeJogo();
             if (modoDeJogo == 1) {
-                jogo.inicio_solo(jogador);
+                Solo.inicio(jogador);
             } else if (modoDeJogo == 2){
                 conexao = jogo.iniciarConexao();
-
-                jogo.inicio_player_vs_player(jogador, conexao);
-
+                PlayerVsPlayer.inicio(jogador, conexao.getTransfer());
                 jogo.encerrarConexao(conexao);
             } else if (modoDeJogo == 3){
                 conexao = jogo.iniciarConexao();
-
-                jogo.inicio_survivor(jogador, conexao);
-
+                Survivor.inicio(jogador, conexao.getTransfer());
                 jogo.encerrarConexao(conexao);
             }
 
@@ -187,11 +107,6 @@ public class Jogo {
             System.out.println(ex.getMessage());
         }
 
-
-
     }
-
-
-
 
 }

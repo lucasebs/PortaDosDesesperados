@@ -25,6 +25,6 @@ public class Jogador {
 
     @Override
     public String toString() {
-        return "Nome: " + this.nome + "\nPontuação: " + this.pontuacao + "\n";
+        return "Nome: " + this.nome + " - Pontuação: " + this.pontuacao + "\n";
     }
 }
