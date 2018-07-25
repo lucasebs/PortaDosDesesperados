@@ -1,6 +1,7 @@
 package br.com.portadosdesesperados;
 
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Jogo {
@@ -9,26 +10,24 @@ public class Jogo {
         Partida partida = new Partida();
         Palco palco = partida.getPalco();
 
-        System.out.println("O jogo funciona da seguinte forma:\n" +
-                "- Você escolhe uma porta do palco\n" +
-                "- Dentro da porta tem um monstro ou um prêmio\n" +
-                "- Se for um prêmio você ganha pontos\n" +
-                "- Se for um monstro você se vira\n\n" +
-                "Obs:\n1 - Existem níveis diferentes de dificuldade.\n" +
-                "2 - Quanto maior o nível mais monstros!!!!!\n\n" +
-                "Boa sorte!!!\n");
+        System.out.println(this.regras());
+
+        this.aguardar(5);
+
+        System.out.println("Pressione 'Enter' para começar...");
+        Scanner enter = new Scanner(System.in);
 
         for1:
-        for (int i = 1; i <= palco.getQuantidadePortas(); i++) {
+        for (int i = 1; i < palco.getQuantidadePortas() ; i++) {
             Boolean numeroInvalido = true;
+
             System.out.println(palco);
-            System.out.println("Nível: " + partida.getLevel().getNivelDificuldade() + "\n");
+            this.aguardar(1);
+            System.out.println("O Nível é " + partida.getLevel().getNivelDificuldade() + "\n");
+            this.aguardar(1);
             System.out.println(jogador);
 
-//
-//            System.out.print("Sérgio Mallandro: 'Qual porta você quer?'\n- Digite o número da porta: ");
-//            Scanner sc = new Scanner(System.in);
-
+            this.aguardar(2);
             System.out.println("Sérgio Mallandro: 'Qual porta você quer?");
             while (numeroInvalido) {
                 numeroInvalido = false;
@@ -46,23 +45,15 @@ public class Jogo {
                         break for1;
                     }
 
-//                    if (porta.isMonstro()) {
-//                        System.out.println("\n- É um monstro!!! Você perdeu!\n");
-//                        break;
-//
-//                    } else {
-//                        System.out.println("\n- É um Prêmio!!!!\n  Prêmio: " + porta.getPremio().getTipoPremio() + "\n");
-//                        jogador.setPontuacao(jogador.getPontuacao() + (10 * partida.getLevel().getQuantidadeMonstros()));
-//                        partida.aumentarLevel();
-//                    }
-
-                }catch (Exception ex){
+                } catch (InputMismatchException ex ) {
+                    System.out.println("\nMuita calma nesta hora!!! Porta Inválida! Escolha outra porta!\n");
+                } catch (Exception ex){
                     numeroInvalido = true;
-                    System.out.println("Muita calma nesta hora!!! " + ex.getMessage() + " Escolha outra porta!\n");
+                    System.out.println("\nMuita calma nesta hora!!! " + ex.getMessage() + " Escolha outra porta!\n");
                 }
-
+                this.aguardar(1);
             }
-
+            this.aguardar(1);
         }
 
         System.out.println(palco);
@@ -73,14 +64,31 @@ public class Jogo {
     }
 
     public String boasvindas() {
-        String mensagem;
-        mensagem = "\n'Quem quer abrir a Porta dos Desesperados?'\n";
-        mensagem += "                            MALLANDRO, Sergio\n\n";
-        mensagem += "---------------------------------------------\n";
-        mensagem += "     Bem vindo a Porta dos Desesperados! \n";
-        mensagem += "---------------------------------------------\n";
-        mensagem += "\nDigite 'EU'(ou seu nome) para começar: ";
-        return mensagem;
+        return  "\n'Quem quer abrir a Porta dos Desesperados?'\n" +
+                "                            MALLANDRO, Sergio\n\n" +
+                "---------------------------------------------\n" +
+                "     Bem vindo a Porta dos Desesperados! \n" +
+                "---------------------------------------------\n" +
+                "\nDigite 'EU'(ou seu nome) para começar: ";
+    }
+
+    public String regras() {
+        return "O jogo funciona da seguinte forma:\n" +
+                "- Você escolhe uma porta do palco\n" +
+                "- Dentro da porta tem um monstro ou um prêmio\n" +
+                "- Se for um prêmio você ganha pontos\n" +
+                "- Se for um monstro você se vira\n\n" +
+                "Obs:\n1 - Existem níveis diferentes de dificuldade.\n" +
+                "2 - Quanto maior o nível mais monstros!!!!!\n\n" +
+                "Boa sorte!!!\n";
+    }
+
+    public void aguardar(Integer segundos) {
+        try {
+            Thread.sleep(segundos * 1000);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 //    public Integer escolheModoDeJogo() {
