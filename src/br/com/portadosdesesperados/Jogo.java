@@ -9,6 +9,7 @@ public class Jogo {
     public void inicio(Jogador jogador) {
         Partida partida = new Partida();
         Palco palco = partida.getPalco();
+        Boolean vencedor = false;
 
         System.out.println(this.regras());
 
@@ -16,6 +17,7 @@ public class Jogo {
 
         System.out.println("Pressione 'Enter' para começar...");
         Scanner enter = new Scanner(System.in);
+        enter.nextLine();
 
         for1:
         for (int i = 1; i < palco.getQuantidadePortas() ; i++) {
@@ -54,11 +56,20 @@ public class Jogo {
                 this.aguardar(1);
             }
             this.aguardar(1);
+            if (i == 4) {
+                vencedor = true;
+            }
         }
+        this.aguardar(1);
 
         System.out.println(palco);
-        System.out.println("\nAcabou o jogo!\n" +
-                           "Você fez " + jogador.getPontuacao() + " pontos!!!");
+
+        if (vencedor) {
+            System.out.println("\nAcabou o jogo! Você venceu!!!");
+        } else {
+            System.out.println("\nAcabou o jogo!");
+        }
+        System.out.println("Você fez " + jogador.getPontuacao() + " pontos!!!");
 
 
     }
