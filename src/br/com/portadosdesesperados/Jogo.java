@@ -18,6 +18,7 @@ public class Jogo {
                 "2 - Quanto maior o nível mais monstros!!!!!\n\n" +
                 "Boa sorte!!!\n");
 
+        for1:
         for (int i = 1; i <= palco.getQuantidadePortas(); i++) {
             Boolean numeroInvalido = true;
             System.out.println(palco);
@@ -38,7 +39,12 @@ public class Jogo {
                 try {
                     Porta porta = partida.escolherPorta(sc.nextInt());
                     porta.setNumero("X");
-                    System.out.println(partida.abrirPorta(jogador, porta));
+                    try {
+                        System.out.println(partida.abrirPorta(jogador, porta));
+                    } catch (Exception ex) {
+                        System.out.println(ex.getMessage());
+                        break for1;
+                    }
 
 //                    if (porta.isMonstro()) {
 //                        System.out.println("\n- É um monstro!!! Você perdeu!\n");
