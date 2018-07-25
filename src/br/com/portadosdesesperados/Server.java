@@ -32,11 +32,15 @@ public class Server implements Transfer {
 
     @Override
     public void conectar() throws IOException {
+        System.out.println("== Servidor Iniciado ==\n");
         this.sock = new ServerSocket(6013);
-        this.in = this.client.getInputStream();
-        this.bin = new BufferedReader(new InputStreamReader(this.in));
-        System.out.println("=== Servidor iniciado ===\n");
-        Socket client = this.sock.accept();
-        System.out.println("Servidor recebeu comunicação do ip: " + client.getInetAddress() + "-" + client.getPort());
+        System.out.println("=== Servidor Conectado ===\n");
+
     }
 }
+
+
+//this.in = this.client.getInputStream();
+//        this.bin = new BufferedReader(new InputStreamReader(this.in));
+//        Socket client = this.sock.accept();
+//        System.out.println("Servidor recebeu comunicação do ip: " + client.getInetAddress() + "-" + client.getPort());

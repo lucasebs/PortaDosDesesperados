@@ -21,13 +21,23 @@ public class Partida {
 //        this.premios = premios;
 //    }
 
-    public Porta escolherPorta(Integer numeroDaPorta) {
+    public Porta escolherPorta(Integer numeroDaPorta) throws Exception {
         if (numeroDaPorta > this.palco.getQuantidadePortas()){
-            System.out.println("Porta Invalida");
-
-
+            throw new Exception("Esta porta não está no palco!");
+//            System.out.println("Porta Invalida");
         }
+
+//        if (numeroDaPorta !=5 || numeroDaPorta != 4 || numeroDaPorta != 1 || numeroDaPorta !=2 || numeroDaPorta !=3 ){
+//            throw new Exception("Porta Inválida!");
+////            System.out.println("Valor invalido tente novamente");
+//        }
+
         Porta porta = palco.getPortas().get(numeroDaPorta - 1);
+
+        if (porta.getNumero() == "X"){
+            throw new Exception("Você já escolheu essa porta!");
+        }
+
         return porta;
     }
 

@@ -1,32 +1,13 @@
 package br.com.portadosdesesperados;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Jogo {
-//    private Jogador jogador = new Jogador()
-//    private Jogador jogador2;
-
-//    public Jogador getJogador() {
-//        return jogador;
-//    }
-//
-//    public void setJogador(Jogador jogador) {
-//        this.jogador = jogador;
-//    }
-
-//    public Jogador getJogador2() {
-//        return jogador2;
-//    }
-
-//    public void setJogador2(Jogador jogador2) {
-//        this.jogador2 = jogador2;
-//    }
 
     public void inicio(Jogador jogador) {
-//        System.out.print("Digite 'EU' para começar: ");
         Partida partida = new Partida();
         Palco palco = partida.getPalco();
-//        jogador.setPontuacao(0);
 
         System.out.println("O jogo funciona da seguinte forma:\n" +
                 "- Você escolhe uma porta do palco\n" +
@@ -38,25 +19,43 @@ public class Jogo {
                 "Boa sorte!!!\n");
 
         for (int i = 1; i <= palco.getQuantidadePortas(); i++) {
+            Boolean numeroInvalido = true;
             System.out.println(palco);
             System.out.println("Nível: " + partida.getLevel().getNivelDificuldade() + "\n");
             System.out.println(jogador);
 
+//
+//            System.out.print("Sérgio Mallandro: 'Qual porta você quer?'\n- Digite o número da porta: ");
+//            Scanner sc = new Scanner(System.in);
 
-            System.out.print("Sérgio Mallandro: 'Qual porta você quer?'\n- Digite o número da porta: ");
-            Scanner sc = new Scanner(System.in);
-            Porta porta = partida.escolherPorta(sc.nextInt());
+            System.out.println("Sérgio Mallandro: 'Qual porta você quer?");
+            while (numeroInvalido) {
+                numeroInvalido = false;
 
-            porta.setNumero("X");
-            if (porta.isMonstro()) {
-                System.out.println("\n- É um monstro!!! Você perdeu!\n");
-                break;
+                System.out.print("- Digite o número da porta: ");
+                Scanner sc = new Scanner(System.in);
 
-            } else {
-                System.out.println("\n- É um Prêmio!!!!\n  Prêmio: " + porta.getPremio().getTipoPremio() + "\n");
-                jogador.setPontuacao(jogador.getPontuacao() + (10 * partida.getLevel().getQuantidadeMonstros()));
-                partida.aumentarLevel();
+                try {
+                    Porta porta = partida.escolherPorta(sc.nextInt());
+
+                    porta.setNumero("X");
+                    if (porta.isMonstro()) {
+                        System.out.println("\n- É um monstro!!! Você perdeu!\n");
+                        break;
+
+                    } else {
+                        System.out.println("\n- É um Prêmio!!!!\n  Prêmio: " + porta.getPremio().getTipoPremio() + "\n");
+                        jogador.setPontuacao(jogador.getPontuacao() + (10 * partida.getLevel().getQuantidadeMonstros()));
+                        partida.aumentarLevel();
+                    }
+
+                }catch (Exception ex){
+                    numeroInvalido = true;
+                    System.out.println("Muita calma nesta hora!!! " + ex.getMessage() + " Escolha outra porta!\n");
+                }
+
             }
+
         }
 
         System.out.println(palco);
@@ -77,12 +76,13 @@ public class Jogo {
         return mensagem;
     }
 
-    public Integer escolheModoDeJogo() {
-        return null;
-    }
+//    public Integer escolheModoDeJogo() {
+//        return null;
+//    }
 
     public static void main(String[] args) {
         Jogo jogo = new Jogo();
+        Conexao conexao = null;
 
         System.out.println(jogo.boasvindas());
         Scanner sc = new Scanner(System.in);
@@ -91,9 +91,19 @@ public class Jogo {
         System.out.println("\nBem vindo, " + jogador.getNome() + "! Vamos ao jogo!\n\n" +
                 "---------------------------------------------\n");
 
-        Conexao conexao = new Conexao();
+//        try {
+//            conexao = new Conexao();
+//        } catch (IOException ioe) {
+//            System.out.println(ioe);
+//        }
 
         jogo.inicio(jogador);
+
+//        try {
+//            conexao.encerrar();
+//        } catch (IOException ioe) {
+//            System.out.println(ioe);
+//        }
     }
 
 }

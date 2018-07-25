@@ -9,11 +9,11 @@ import java.util.Scanner;
 public class Conexao {
     private Transfer transfer;
 
-    public Conexao(){
+    public Conexao() throws IOException {
         System.out.println("= Iniciando Conexão =");
+        this.setTransfer();
 
         this.transfer.conectar();
-
     }
 
 //    public void conectar() {
@@ -24,7 +24,8 @@ public class Conexao {
     public void setTransfer() {
         System.out.println("Você é:\n" +
                 "1 - Servidor\n" +
-                "2 - Cliente\n:");
+                "2 - Cliente\n");
+        System.out.print("$");
         Scanner sc = new Scanner(System.in);
 
         if (sc.nextInt() == 1 || sc.next().equalsIgnoreCase("servidor")) {
@@ -32,5 +33,9 @@ public class Conexao {
         } else if (sc.nextInt() == 2 || sc.next().equalsIgnoreCase("cliente")) {
             this.transfer = new Client();
         }
+    }
+
+    public void encerrar() throws IOException {
+        transfer.desconectar();
     }
 }

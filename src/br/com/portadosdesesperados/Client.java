@@ -30,9 +30,10 @@ public class Client implements Transfer {
 
     @Override
     public void conectar() throws IOException {
+        System.out.println("== Cliente Iniciado ==\n");
         this.sock = new Socket("192.168.15.7",6013);
         this.in = this.sock.getInputStream();
         this.bin = new BufferedReader(new InputStreamReader(this.in));
-        System.out.println("=== Cliente iniciado ===\n");
+        System.out.println("=== Cliente Conectado ===\n");
     }
 }
