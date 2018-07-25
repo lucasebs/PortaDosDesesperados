@@ -1,10 +1,7 @@
 package br.com.portadosdesesperados;
 
-import javax.sound.sampled.Port;
-import java.util.ArrayList;
 
 public class Partida {
-//    private ArrayList<Premio> premios = new ArrayList<>();
     private Palco palco;
     private Level level;
 
@@ -14,24 +11,11 @@ public class Partida {
         this.level = level;
     }
 
-//    public ArrayList<Premio> getPremios() {
-//        return premios;
-//    }
-//
-//    public void setPremios(ArrayList<Premio> premios) {
-//        this.premios = premios;
-//    }
 
     public Porta escolherPorta(Integer numeroDaPorta) throws Exception {
         if (numeroDaPorta > this.palco.getQuantidadePortas()){
             throw new Exception("Esta porta não está no palco!");
-//            System.out.println("Porta Invalida");
         }
-
-//        if (numeroDaPorta !=5 || numeroDaPorta != 4 || numeroDaPorta != 1 || numeroDaPorta !=2 || numeroDaPorta !=3 ){
-//            throw new Exception("Porta Inválida!");
-////            System.out.println("Valor invalido tente novamente");
-//        }
 
         Porta porta = palco.getPortas().get(numeroDaPorta - 1);
 
@@ -44,7 +28,6 @@ public class Partida {
 
     public String abrirPorta(Jogador jogador, Porta porta) throws Exception {
         if (porta.isMonstro()) {
-//            return "\n- É um monstro!!! Você perdeu!\n";
             throw new Exception("\n- É um monstro!!! Você perdeu!\n");
         } else {
             jogador.setPontuacao(jogador.getPontuacao() + (10 * getLevel().getQuantidadeMonstros()));
