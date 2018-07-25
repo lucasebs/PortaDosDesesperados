@@ -35,7 +35,11 @@ public class Conexao {
         }
     }
 
+    public Transfer getTransfer() {
+        return this.transfer;
+    }
+
     public void encerrar() throws IOException {
-        transfer.desconectar();
+        this.transfer.desconectar();
     }
 }

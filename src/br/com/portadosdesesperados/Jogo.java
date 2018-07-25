@@ -6,10 +6,12 @@ import java.util.Scanner;
 
 public class Jogo {
 
-    public void inicio(Jogador jogador) {
+    public void inicio_solo(Jogador jogador) {
         Partida partida = new Partida();
         Palco palco = partida.getPalco();
         Boolean vencedor = false;
+
+        System.out.println("\nModo Solo\n");
 
         System.out.println(this.regras());
 
@@ -70,7 +72,13 @@ public class Jogo {
             System.out.println("\nAcabou o jogo!");
         }
         System.out.println("Você fez " + jogador.getPontuacao() + " pontos!!!");
+    }
 
+    private void inicio_player_vs_player(Jogador jogador, Conexao conexao) {
+
+    }
+
+    private void inicio_survivor(Jogador jogador, Conexao conexao) {
 
     }
 
@@ -89,8 +97,8 @@ public class Jogo {
                 "- Dentro da porta tem um monstro ou um prêmio\n" +
                 "- Se for um prêmio você ganha pontos\n" +
                 "- Se for um monstro você se vira\n\n" +
-                "Obs:\n1 - Existem níveis diferentes de dificuldade.\n" +
-                "2 - Quanto maior o nível mais monstros!!!!!\n\n" +
+                "Obs1 - Existem níveis diferentes de dificuldade.\n" +
+                "Obs2 - Quanto maior o nível mais monstros!!!!!\n\n" +
                 "Boa sorte!!!\n";
     }
 
@@ -102,9 +110,49 @@ public class Jogo {
         }
     }
 
-//    public Integer escolheModoDeJogo() {
-//        return null;
-//    }
+    public Integer escolheModoDeJogo() throws Exception {
+        System.out.print("Vamos começar escolhendo o modo do Jogo:" +
+                "\n1 - Solo" +
+                "\n2 - Multiplayer" +
+                "\n = ");
+        Scanner sc = new Scanner(System.in);
+        if (sc.nextInt() == 1){
+            return 1;
+        } else if (sc.nextInt() == 2) {
+            System.out.print("Qual o modo Multiplayer:" +
+                    "\n1 - Player vs Player" +
+                    "\n2 - Survivor" +
+                    "\n = ");
+            Scanner mp = new Scanner(System.in);
+            if (mp.nextInt() == 1){
+                return 2;
+            } else if (mp.nextInt() == 2) {
+                return 3;
+            } else {
+                throw new Exception("Modo de Jogo Invalido!");
+            }
+        } else {
+            throw new Exception("Modo de Jogo Invalido!");
+        }
+    }
+
+    public Conexao iniciarConexao(){
+        Conexao conexao = null;
+        try {
+            conexao = new Conexao();
+        } catch (IOException ioe) {
+            System.out.println(ioe);
+        }
+        return conexao;
+    }
+
+    public void encerrarConexao(Conexao conexao) {
+        try {
+            conexao.encerrar();
+        } catch (IOException ioe) {
+            System.out.println(ioe);
+        }
+    }
 
     public static void main(String[] args) {
         Jogo jogo = new Jogo();
@@ -117,19 +165,33 @@ public class Jogo {
         System.out.println("\nBem vindo, " + jogador.getNome() + "! Vamos ao jogo!\n\n" +
                 "---------------------------------------------\n");
 
-//        try {
-//            conexao = new Conexao();
-//        } catch (IOException ioe) {
-//            System.out.println(ioe);
-//        }
+        try {
+            Integer modoDeJogo = jogo.escolheModoDeJogo();
+            if (modoDeJogo == 1) {
+                jogo.inicio_solo(jogador);
+            } else if (modoDeJogo == 2){
+                conexao = jogo.iniciarConexao();
 
-        jogo.inicio(jogador);
+                jogo.inicio_player_vs_player(jogador, conexao);
 
-//        try {
-//            conexao.encerrar();
-//        } catch (IOException ioe) {
-//            System.out.println(ioe);
-//        }
+                jogo.encerrarConexao(conexao);
+            } else if (modoDeJogo == 3){
+                conexao = jogo.iniciarConexao();
+
+                jogo.inicio_survivor(jogador, conexao);
+
+                jogo.encerrarConexao(conexao);
+            }
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+
+
     }
+
+
+
 
 }

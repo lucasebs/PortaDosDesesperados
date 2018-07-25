@@ -4,9 +4,8 @@
     <list default="true" id="a67f7a21-032f-4aad-9571-9faab9a45fa7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PortaDosDesesperados/br/com/portadosdesesperados/Jogo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PortaDosDesesperados/br/com/portadosdesesperados/Jogo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PortaDosDesesperados/br/com/portadosdesesperados/Partida.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PortaDosDesesperados/br/com/portadosdesesperados/Partida.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Conexao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Conexao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Jogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Jogo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Partida.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,8 +20,8 @@
       <file leaf-file-name="Jogo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Jogo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
+            <state relative-caret-position="135">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -46,7 +45,7 @@
       <file leaf-file-name="Partida.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Partida.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
+            <state relative-caret-position="450">
               <caret line="30" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="e#2436#2437#0" expanded="true" />
@@ -65,7 +64,7 @@
       <file leaf-file-name="Palco.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Palco.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
+            <state relative-caret-position="1380">
               <caret line="99" column="5" lean-forward="true" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
             </state>
           </provider>
@@ -74,8 +73,12 @@
       <file leaf-file-name="Conexao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Conexao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+            <state relative-caret-position="315">
+              <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="26" selection-end-column="33" />
+              <folding>
+                <element signature="e#988#989#0" expanded="true" />
+                <element signature="e#1019#1020#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,9 +140,9 @@
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Transfer.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Client.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Server.java" />
-        <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Conexao.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Partida.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Porta.java" />
+        <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Conexao.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Jogo.java" />
       </list>
     </option>
@@ -282,7 +285,7 @@
       <option name="presentableId" value="Default" />
       <updated>1532391852202</updated>
       <workItem from="1532391857348" duration="1246000" />
-      <workItem from="1532484811764" duration="7081000" />
+      <workItem from="1532484811764" duration="10378000" />
     </task>
     <task id="LOCAL-00001" summary="Delete Embaralhador.java">
       <created>1532398706072</created>
@@ -333,11 +336,32 @@
       <option name="project" value="LOCAL" />
       <updated>1532489434005</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Organização Exceptions. Regras. e Método Aguardar()">
+      <created>1532492932208</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1532492932208</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Comentários apagados">
+      <created>1532492973546</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1532492973546</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Vencedor">
+      <created>1532494884445</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1532494884445</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12573000" />
+    <option name="totallyTimeSpent" value="15870000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1052" extended-state="6" />
@@ -345,15 +369,15 @@
     <layout>
       <window_info anchor="right" id="Palette" order="9" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49791667" weight="0.32944915" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.49739584" weight="0.32944915" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info id="Image Layers" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50208336" side_tool="true" visible="true" weight="0.36122882" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5026042" side_tool="true" visible="true" weight="0.36122882" />
       <window_info anchor="right" id="Maven Projects" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49947917" weight="0.32944915" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49791667" visible="true" weight="0.36122882" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49739584" visible="true" weight="0.36122882" />
       <window_info anchor="bottom" id="Terminal" order="12" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Designer" order="7" />
@@ -427,7 +451,10 @@
     <MESSAGE value="Add metodo abrirPorta() em Partida" />
     <MESSAGE value="Se isMonstro() lança Excessao ao invés de retornar" />
     <MESSAGE value="break; quebra o loop for, ao invés do while interno." />
-    <option name="LAST_COMMIT_MESSAGE" value="break; quebra o loop for, ao invés do while interno." />
+    <MESSAGE value="Organização Exceptions. Regras. e Método Aguardar()" />
+    <MESSAGE value="Comentários apagados" />
+    <MESSAGE value="Vencedor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Vencedor" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Jogo.java">
@@ -451,6 +478,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+          <folding>
+            <element signature="e#988#989#0" expanded="true" />
+            <element signature="e#1019#1020#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -717,23 +748,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Conexao.java">
+    <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Porta.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="38" column="26" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Palco.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="99" column="5" lean-forward="true" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+        <state relative-caret-position="345">
+          <caret line="33" selection-start-line="33" selection-end-line="35" selection-end-column="5" />
+          <folding>
+            <element signature="e#712#713#0" expanded="true" />
+            <element signature="e#748#749#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Partida.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="450">
           <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="e#2436#2437#0" expanded="true" />
@@ -748,21 +776,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Porta.java">
+    <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Palco.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="33" selection-start-line="33" selection-end-line="35" selection-end-column="5" />
+        <state relative-caret-position="1380">
+          <caret line="99" column="5" lean-forward="true" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Conexao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="26" selection-end-column="33" />
           <folding>
-            <element signature="e#712#713#0" expanded="true" />
-            <element signature="e#748#749#0" expanded="true" />
+            <element signature="e#988#989#0" expanded="true" />
+            <element signature="e#1019#1020#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Jogo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="16" column="61" selection-start-line="16" selection-start-column="61" selection-end-line="16" selection-end-column="61" />
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
