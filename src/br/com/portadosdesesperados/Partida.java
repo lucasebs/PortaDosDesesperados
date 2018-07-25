@@ -42,9 +42,10 @@ public class Partida {
         return porta;
     }
 
-    public String abrirPorta(Jogador jogador, Porta porta) {
+    public String abrirPorta(Jogador jogador, Porta porta) throws Exception {
         if (porta.isMonstro()) {
-            return "\n- É um monstro!!! Você perdeu!\n";
+//            return "\n- É um monstro!!! Você perdeu!\n";
+            throw new Exception("\n- É um monstro!!! Você perdeu!\n");
         } else {
             jogador.setPontuacao(jogador.getPontuacao() + (10 * getLevel().getQuantidadeMonstros()));
             aumentarLevel();
