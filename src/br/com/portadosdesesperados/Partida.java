@@ -1,5 +1,6 @@
 package br.com.portadosdesesperados;
 
+import javax.sound.sampled.Port;
 import java.util.ArrayList;
 
 public class Partida {
@@ -39,6 +40,16 @@ public class Partida {
         }
 
         return porta;
+    }
+
+    public String abrirPorta(Jogador jogador, Porta porta) {
+        if (porta.isMonstro()) {
+            return "\n- É um monstro!!! Você perdeu!\n";
+        } else {
+            jogador.setPontuacao(jogador.getPontuacao() + (10 * getLevel().getQuantidadeMonstros()));
+            aumentarLevel();
+            return "\n- É um Prêmio!!!!\n  Prêmio: " + porta.getPremio().getTipoPremio() + "\n";
+        }
     }
 
     public void aumentarLevel() {

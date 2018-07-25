@@ -37,17 +37,18 @@ public class Jogo {
 
                 try {
                     Porta porta = partida.escolherPorta(sc.nextInt());
-
                     porta.setNumero("X");
-                    if (porta.isMonstro()) {
-                        System.out.println("\n- É um monstro!!! Você perdeu!\n");
-                        break;
+                    System.out.println(partida.abrirPorta(jogador, porta));
 
-                    } else {
-                        System.out.println("\n- É um Prêmio!!!!\n  Prêmio: " + porta.getPremio().getTipoPremio() + "\n");
-                        jogador.setPontuacao(jogador.getPontuacao() + (10 * partida.getLevel().getQuantidadeMonstros()));
-                        partida.aumentarLevel();
-                    }
+//                    if (porta.isMonstro()) {
+//                        System.out.println("\n- É um monstro!!! Você perdeu!\n");
+//                        break;
+//
+//                    } else {
+//                        System.out.println("\n- É um Prêmio!!!!\n  Prêmio: " + porta.getPremio().getTipoPremio() + "\n");
+//                        jogador.setPontuacao(jogador.getPontuacao() + (10 * partida.getLevel().getQuantidadeMonstros()));
+//                        partida.aumentarLevel();
+//                    }
 
                 }catch (Exception ex){
                     numeroInvalido = true;
