@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class Survivor {
     public static void inicio(Jogador jogador, Transfer transfer) {
+
         Transfer transmissor = transfer;
         Partida partida = new Partida();
         Palco palco = partida.getPalco();
@@ -70,6 +71,7 @@ public class Survivor {
                 if (i == 4) {
                     vencedor = true;
                 }
+                partida.aumentarLevel();
             }
             Jogo.aguardar(1);
 
