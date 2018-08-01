@@ -1,7 +1,6 @@
 package br.com.portadosdesesperados;
 
 import java.io.IOException;
-import java.net.SocketException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -9,86 +8,147 @@ public class PlayerVsPlayer {
     public static void inicio(Jogador jogador, Transfer transmissor) {
         Partida partida = new Partida();
         Palco palco = partida.getPalco();
+
         Boolean vencedor = false;
+        Integer jogadorDaVez = 1;
 
-        System.out.println("\n========= Modo Player vs Player =========\n");
-
-        System.out.println(Jogo.regras());
-
-        Jogo.aguardar(5);
-
-//        System.out.println("Pressione 'Enter' para começar...");
-//        Scanner enter = new Scanner(System.in);
-//        enter.nextLine();
+        Jogador jogadorServidor = null;
+        Jogador jogadorCliente = null;
 
         try {
-            transmissor.transmitir("Você está jogando contra " + jogador.getNome());
-            System.out.println(transmissor.receber());
-
-            for1:
-            for (int i = 1; i < palco.getQuantidadePortas() ; i++) {
-                Boolean numeroInvalido = true;
-
-                transmissor.transmitir(palco.toString());
-                for (int j = 0;j<=5 ; j++){
-                    transmissor.receber();
-                }
-
-                Jogo.aguardar(1);
-                System.out.println("O Nível é " + partida.getLevel().getNivelDificuldade() + "\n");
-                Jogo.aguardar(1);
-
-                transmissor.transmitir(jogador.toString());
-                System.out.println(jogador);
-                System.out.println(transmissor.receber());
-
-                Jogo.aguardar(1);
-
-                System.out.println("Sérgio Mallandro: 'Qual porta você quer?");
-                while (numeroInvalido) {
-                    numeroInvalido = false;
-
-                    System.out.print("- Digite o número da porta: ");
-                    Scanner sc = new Scanner(System.in);
-
-                    try {
-                        Porta porta = partida.escolherPorta(sc.nextInt());
-                        porta.setNumero("X");
-                        try {
-                            System.out.println(partida.abrirPorta(jogador, porta));
-                        } catch (Exception ex) {
-                            System.out.println(ex.getMessage());
-                            break for1;
-                        }
-
-                    } catch (InputMismatchException ex ) {
-                        System.out.println("\nMuita calma nesta hora!!! Porta Inválida! Escolha outra porta!\n");
-                    } catch (Exception ex){
-                        numeroInvalido = true;
-                        System.out.println("\nMuita calma nesta hora!!! " + ex.getMessage() + " Escolha outra porta!\n");
-                    }
-                    Jogo.aguardar(1);
-                }
-                Jogo.aguardar(1);
-                if (i == 4) {
-                    vencedor = true;
-                }
-            }
-            Jogo.aguardar(1);
-
-            System.out.println(palco);
-
-            if (vencedor) {
-                System.out.println("\nAcabou o jogo! Você venceu!!!");
+            if (transmissor.getTipoTransfer() == "Servidor"){
+                jogadorServidor = jogador;
+                transmissor.transmitir(1, jogadorServidor.getNome());
+                jogadorCliente = new Jogador( transmissor.receber(1) );
             } else {
-                System.out.println("\nAcabou o jogo!");
+                jogadorCliente = jogador;
+                transmissor.transmitir(1, jogadorCliente.getNome());
+                jogadorServidor = new Jogador( transmissor.receber(1));
             }
-            System.out.println("Você fez " + jogador.getPontuacao() + " pontos!!!");
-
-        } catch (SocketException e) {
-            System.out.println("\nJogo encerrado! Seu oponente perdeu!\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
+        System.out.println("\n========= Modo Player vs Player =========\n");
+        System.out.println(Jogo.regras());
+        Jogo.aguardar(5);
+
+        System.out.println("Disputa " + jogadorServidor.getNome() + " x " + jogadorCliente.getNome() + "\n");
+
+        while1:
+        while (true) {
+            Boolean numeroInvalido = true;
+
+            System.out.println(palco);
+            Jogo.aguardar(1);
+            System.out.println("O Nível é " + partida.getLevel().getNivelDificuldade() + "\n");
+            Jogo.aguardar(1);
+
+            System.out.println(jogadorServidor);
+            System.out.println(jogadorCliente);
+            Jogo.aguardar(1);
+
+            try {
+                if (jogadorDaVez == 1) {
+                    if ( transmissor.getTipoTransfer() == "Servidor" ) {
+                        System.out.println("Sérgio Mallandro: '" + jogadorServidor.getNome() + ", qual porta você quer?");
+                        while (numeroInvalido) {
+                            numeroInvalido = false;
+                            Porta porta = escolherPorta(partida);
+                            if (invalidarPorta(partida,jogadorServidor,porta,transmissor)) {
+                                break while1;
+                            }
+                            porta.setNumero("X");
+                        }
+                    }
+                    if (transmissor.getTipoTransfer() == "Cliente") {
+                        System.out.println("Aguarde! É a vez de " + jogadorServidor.getNome() + " jogar!" );
+                        Porta porta = escutarPorta(transmissor, jogadorServidor, partida);
+                        if (porta == null) {
+                            break while1;
+                        }
+                        porta.setNumero("X");
+                    }
+                    jogadorDaVez = 2;
+                } else if (jogadorDaVez == 2) {
+                    if ( transmissor.getTipoTransfer() == "Cliente" ) {
+                        System.out.println("Sérgio Mallandro: '" + jogadorCliente.getNome() + ", qual porta você quer?");
+                        while (numeroInvalido) {
+                            numeroInvalido = false;
+                            Porta porta = escolherPorta(partida);
+                            if(invalidarPorta(partida,jogadorCliente,porta,transmissor)) {
+                                break while1;
+                            }
+                            porta.setNumero("X");
+                        }
+                    }
+                    if (transmissor.getTipoTransfer() == "Servidor") {
+                        System.out.println("Aguarde! É a vez de " + jogadorCliente.getNome() + " jogar!" );
+                        Porta porta = escutarPorta(transmissor, jogadorCliente, partida);
+                        if (porta == null) {
+                            break while1;
+                        }
+                        porta.setNumero("X");
+
+                    }
+                    jogadorDaVez = 1;
+                }
+            } catch (InputMismatchException ex ) {
+                System.out.println("\nMuita calma nesta hora!!! Porta Inválida! Escolha outra porta!\n");
+            } catch (Exception ex){
+                numeroInvalido = true;
+                System.out.println("\nMuita calma nesta hora!!! " + ex.getMessage() + " Escolha outra porta!\n");
+            }
+        }
+        Jogo.aguardar(2);
+        System.out.println(palco);
+        verificaVencedor(vencedor);
+
+        System.out.println("Você fez " + jogador.getPontuacao() + " pontos!!!");
+
+    }
+    private static void verificaVencedor(Boolean vencedor){
+        if (vencedor) {
+            System.out.println("\nAcabou o jogo! Você venceu!!!");
+        } else {
+            System.out.println("\nAcabou o jogo!");
+        }
+    }
+
+    private static Porta escolherPorta(Partida partida) throws Exception {
+        System.out.print("- Digite o número da porta: ");
+        Scanner sc = new Scanner(System.in);
+        Integer numeroDaPorta = sc.nextInt();
+        return partida.escolherPorta(numeroDaPorta);
+    }
+
+    private static boolean invalidarPorta(Partida partida, Jogador jogador, Porta porta, Transfer transmissor) throws IOException {
+        try {
+            System.out.println(partida.abrirPorta(jogador, porta));
+        } catch (Exception ex) {
+            transmissor.transmitir(1, "fim");
+            System.out.println(ex.getMessage());
+            return true;
+        }
+        transmissor.transmitir(1, String.valueOf(porta.getNumero()));
+        return false;
+    }
+
+    private static Porta escutarPorta(Transfer transmissor, Jogador jogador, Partida partida) throws Exception {
+        Porta porta = null;
+        String mensagem = "";
+
+        while (true) {
+            mensagem = transmissor.receber(1);
+            if (mensagem.equals("fim")) {
+                System.out.println(jogador.getNome() + " perdeu!!!!");
+                return null;
+            } else {
+                break;
+            }
+        }
+        return partida.escolherPorta(Integer.valueOf(mensagem));
+
     }
 }

@@ -11,7 +11,6 @@ public class Partida {
         this.level = level;
     }
 
-
     public Porta escolherPorta(Integer numeroDaPorta) throws Exception {
         if (numeroDaPorta > this.palco.getQuantidadePortas()){
             throw new Exception("Esta porta não está no palco!");
@@ -31,7 +30,7 @@ public class Partida {
             throw new Exception("\n- É um monstro!!! Você perdeu!\n");
         } else {
             jogador.setPontuacao(jogador.getPontuacao() + (10 * getLevel().getQuantidadeMonstros()));
-            aumentarLevel();
+//            aumentarLevel();
             return "\n- É um Prêmio!!!!\n  Prêmio: " + porta.getPremio().getTipoPremio() + "\n";
         }
     }

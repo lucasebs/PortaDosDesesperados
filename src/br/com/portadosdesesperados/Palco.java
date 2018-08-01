@@ -7,7 +7,6 @@ public class Palco {
     private Integer quantidadePortas;
     private ArrayList<Porta> portas = new ArrayList<>();
     private ArrayList<String> listaPremios = new ArrayList<>();
-//    private ArrayList<Integer> monstros = new ArrayList<>();
 
     public Palco(Integer quantidadePortas, Level level) {
         this.createListaPremios();
@@ -15,17 +14,15 @@ public class Palco {
         Integer quantidadeMonstros = level.getQuantidadeMonstros();
 
         for (int i = 1; i <= quantidadePortas; i++) {
-            portas.add(new Porta(String.valueOf(i),
-                    false,
+            portas.add(new Porta(String.valueOf(i), false,
                     new Premio(listaPremios.get(this.numeroAleatorio(0,listaPremios.size()-1)))));
         }
 
         for (int i = 0; i < quantidadeMonstros; i++) {
-//            System.out.println(this.numeroAleatorio(1,quantidadePortas-1));
             portas.get(this.numeroAleatorio(0,quantidadePortas-1)).setMonstro(true);
         }
-
     }
+
     public Integer getQuantidadePortas() {
         return quantidadePortas;
     }
@@ -51,9 +48,6 @@ public class Palco {
         this.listaPremios.add("Cafeteira");
     }
 
-//    public ArrayList<String> getListaPremios() {
-//        return listaPremios;
-//    }
 
     public void setQuantidadePortas(Integer quantidadePortas) {
         this.quantidadePortas = quantidadePortas;
@@ -63,27 +57,10 @@ public class Palco {
         return portas;
     }
 
-//    public void setPortas(ArrayList<Porta> portas) {
-//        this.portas = portas;
-//    }
-
-//    public ArrayList<Integer> getMontros() {
-//        return montros;
-//    }
-//
-//    public void setMontros(ArrayList<Integer> montros) {
-//        this.montros = montros;
-//    }
-
     public Integer numeroAleatorio(int min, int max){
-//        int randomNum = min + (int)(Math.random() * (max - min));
-
         Random random = new Random();
-
         return random.ints(min,(max+1)).findFirst().getAsInt();
-//        return randomNum;
     }
-
 
     @Override
     public String toString() {

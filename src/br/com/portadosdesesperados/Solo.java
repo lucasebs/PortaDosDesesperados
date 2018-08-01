@@ -59,6 +59,7 @@ public class Solo {
             if (i == 4) {
                 vencedor = true;
             }
+            partida.aumentarLevel();
         }
         Jogo.aguardar(1);
 

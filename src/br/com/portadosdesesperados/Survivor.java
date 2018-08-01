@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class Survivor {
     public static void inicio(Jogador jogador, Transfer transfer) {
+
         Transfer transmissor = transfer;
         Partida partida = new Partida();
         Palco palco = partida.getPalco();
@@ -24,8 +25,8 @@ public class Survivor {
         enter.nextLine();
 
         try {
-            transmissor.transmitir("Você está jogando contra " + jogador.getNome());
-            System.out.println(transmissor.receber());
+            transmissor.transmitir(0, "Você está jogando contra " + jogador.getNome());
+            System.out.println(transmissor.receber(0));
 
             for1:
             for (int i = 1; i < palco.getQuantidadePortas() ; i++) {
@@ -36,9 +37,9 @@ public class Survivor {
                 System.out.println("O Nível é " + partida.getLevel().getNivelDificuldade() + "\n");
                 Jogo.aguardar(1);
 
-                transmissor.transmitir(jogador.toString());
+                transmissor.transmitir(0,jogador.toString());
                 System.out.println(jogador);
-                System.out.println(transmissor.receber());
+                System.out.println(transmissor.receber(0));
 
                 Jogo.aguardar(1);
                 System.out.println("Sérgio Mallandro: 'Qual porta você quer?");
@@ -70,6 +71,7 @@ public class Survivor {
                 if (i == 4) {
                     vencedor = true;
                 }
+                partida.aumentarLevel();
             }
             Jogo.aguardar(1);
 
