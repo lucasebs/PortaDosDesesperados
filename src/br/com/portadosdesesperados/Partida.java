@@ -11,7 +11,6 @@ public class Partida {
         this.level = level;
     }
 
-
     public Porta escolherPorta(Integer numeroDaPorta) throws Exception {
         if (numeroDaPorta > this.palco.getQuantidadePortas()){
             throw new Exception("Esta porta não está no palco!");
