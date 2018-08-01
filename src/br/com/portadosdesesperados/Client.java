@@ -12,21 +12,26 @@ public class Client implements Transfer {
 
 
     @Override
-    public void transmitir(String mensagem) throws IOException {
-        PrintWriter pout = new PrintWriter(this.sock.getOutputStream(), true);
-        pout.println(mensagem);
+    public void transmitir(Integer chave, Object mensagem) throws IOException {
+        if (chave == 0){
+            PrintWriter pout = new PrintWriter(this.sock.getOutputStream(), true);
+            pout.println(mensagem);
+        }
+
     }
 
     @Override
-    public String receber() throws IOException, SocketException {
-        this.in = this.sock.getInputStream();
-        if (in == null){
-            return null;
+    public Object receber(Integer chave) throws IOException, SocketException {
+        if (chave == 0){
+            this.in = this.sock.getInputStream();
+            if (in == null){
+                return null;
+            }
+            this.bin = new BufferedReader(new InputStreamReader(this.in));
+            String line = this.bin.readLine();
+            return line + "\n";
         }
-        this.bin = new BufferedReader(new InputStreamReader(this.in));
-        String line = this.bin.readLine();
-        return line + "\n";
-
+        return null;
     }
 
     @Override
