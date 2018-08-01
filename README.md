@@ -21,7 +21,7 @@ televisão brasileira na década de 80.
 ## Como jogar
 
 - Baixe o zip do Projeto
-[https://github.com/lucasebs/PortaDosDesesperados/archive/master.zip](https://github.com/lucasebs/PortaDosDesesperados/archive/master.zip)
+> [https://github.com/lucasebs/PortaDosDesesperados/archive/master.zip](https://github.com/lucasebs/PortaDosDesesperados/archive/master.zip)
 - Navegue até o diretório 
 > PortaDosDesesperados/src
 - Compile os códigos do Jogo
