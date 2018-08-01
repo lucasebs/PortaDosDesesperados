@@ -29,6 +29,7 @@ public class PlayerVsPlayer {
             e.printStackTrace();
         }
 
+
         System.out.println("\n========= Modo Player vs Player =========\n");
         System.out.println(Jogo.regras());
         Jogo.aguardar(5);
