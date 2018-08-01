@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a67f7a21-032f-4aad-9571-9faab9a45fa7" name="Default" comment="Modos Multiplayer-Survivor Ok. Inicio PlayerVsPlayer">
+    <list default="true" id="a67f7a21-032f-4aad-9571-9faab9a45fa7" name="Default" comment="PlayerVSPlayer funcionando">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PortaDosDesesperados/br/com/portadosdesesperados/Conexao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PortaDosDesesperados/br/com/portadosdesesperados/Jogador.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PortaDosDesesperados/br/com/portadosdesesperados/Jogo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PortaDosDesesperados/br/com/portadosdesesperados/Level.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PortaDosDesesperados/br/com/portadosdesesperados/Palco.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PortaDosDesesperados/br/com/portadosdesesperados/Partida.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PortaDosDesesperados/br/com/portadosdesesperados/Porta.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PortaDosDesesperados/br/com/portadosdesesperados/Premio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Palco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Palco.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Partida.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/portadosdesesperados/PlayerVsPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/portadosdesesperados/PlayerVsPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Solo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Solo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Survivor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Survivor.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,47 +29,35 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1994" />
-          <entry key="txt" value="331" />
+          <entry key="java" value="2127" />
+          <entry key="txt" value="482" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1994" />
-          <entry key="PLAIN_TEXT" value="331" />
+          <entry key="JAVA" value="2127" />
+          <entry key="PLAIN_TEXT" value="482" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="4" />
+          <entry key="java" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="4" />
+          <entry key="JAVA" value="5" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Jogo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="100" column="48" selection-start-line="100" selection-start-column="48" selection-end-line="100" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Survivor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state>
+              <caret lean-forward="true" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -99,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/PlayerVsPlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1140">
-              <caret line="76" column="65" selection-start-line="76" selection-start-column="65" selection-end-line="76" selection-end-column="65" />
+            <state relative-caret-position="121">
+              <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,8 +102,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Partida.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="435">
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
             </state>
           </provider>
         </entry>
@@ -132,8 +111,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Palco.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1380">
-              <caret line="99" column="5" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+            <state relative-caret-position="361">
+              <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Porta.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -205,18 +193,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Palco.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Porta.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Jogador.java" />
-        <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Partida.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Solo.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Survivor.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Client.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Server.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Transfer.java" />
-        <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/PlayerVsPlayer.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Conexao.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Jogo.java" />
+        <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Partida.java" />
+        <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/PlayerVsPlayer.java" />
+        <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Palco.java" />
       </list>
     </option>
   </component>
@@ -268,7 +256,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533143742532" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533147843241" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/GitHub, Inc/GitHub Desktop.lnk" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -470,15 +458,35 @@
       <option name="project" value="LOCAL" />
       <updated>1533143695148</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Adicionado tipoTransfer e ajustes no método conectar()">
+      <created>1533143740745</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1533143740745</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Chamada ao metodo aumentarLevel()">
+      <created>1533143774787</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1533143774787</updated>
+    </task>
+    <task id="LOCAL-00021" summary="PlayerVSPlayer funcionando">
+      <created>1533143904004</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1533143904004</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44802000" />
+    <option name="totallyTimeSpent" value="48944000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="740" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25378788" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -489,13 +497,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49545455" weight="0.15823817" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49469697" weight="0.15823817" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49848485" visible="true" weight="0.32789558" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50151515" side_tool="true" visible="true" weight="0.32789558" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" sideWeight="0.49772727" visible="true" weight="0.32626426" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5022727" side_tool="true" visible="true" weight="0.32626426" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49318182" weight="0.32626426" />
@@ -574,8 +582,10 @@
     <MESSAGE value="Ajustes retornos e parametros Transfer. Adicionado getTipoTransfer()" />
     <MESSAGE value="Adicionada chamada ao método aumentarLevel()" />
     <MESSAGE value="Chamada ao método aumentarLevel()" />
+    <MESSAGE value="Adicionado tipoTransfer e ajustes no método conectar()" />
     <MESSAGE value="Chamada ao metodo aumentarLevel()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chamada ao metodo aumentarLevel()" />
+    <MESSAGE value="PlayerVSPlayer funcionando" />
+    <option name="LAST_COMMIT_MESSAGE" value="PlayerVSPlayer funcionando" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar:///opt/java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/Object.java" />
@@ -593,13 +603,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Embaralhador.java" />
-    <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Porta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="33" selection-start-line="33" selection-end-line="35" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///opt/java/jdk-10.0.1/lib/src.zip!/java.base/java/io/IOException.java" />
     <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Level.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -628,13 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Partida.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Survivor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -653,13 +649,6 @@
             <element signature="e#523#524#0" expanded="true" />
             <element signature="e#609#610#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Palco.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="99" column="5" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -694,16 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/PlayerVsPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="76" column="65" selection-start-line="76" selection-start-column="65" selection-end-line="76" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Conexao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -718,8 +697,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Jogo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="100" column="48" selection-start-line="100" selection-start-column="48" selection-end-line="100" selection-end-column="48" />
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Partida.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Porta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="29" lean-forward="true" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Palco.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="62" column="5" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/PlayerVsPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
