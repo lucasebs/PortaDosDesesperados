@@ -11,9 +11,6 @@
       <change beforePath="$PROJECT_DIR$/out/production/PortaDosDesesperados/br/com/portadosdesesperados/Partida.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PortaDosDesesperados/br/com/portadosdesesperados/Porta.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PortaDosDesesperados/br/com/portadosdesesperados/Premio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Conexao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Conexao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Jogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Jogo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Partida.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/portadosdesesperados/PlayerVsPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/portadosdesesperados/PlayerVsPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Solo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/portadosdesesperados/Solo.java" afterDir="false" />
@@ -43,13 +40,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="1994" />
-          <entry key="txt" value="34" />
+          <entry key="txt" value="134" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="1994" />
-          <entry key="PLAIN_TEXT" value="34" />
+          <entry key="PLAIN_TEXT" value="134" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -66,11 +63,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Jogo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="95" column="40" lean-forward="true" selection-start-line="95" selection-start-column="40" selection-end-line="95" selection-end-column="40" />
+            <state relative-caret-position="105">
+              <caret line="100" column="48" selection-start-line="100" selection-start-column="48" selection-end-line="100" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -142,7 +139,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Conexao.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
@@ -215,12 +212,12 @@
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Partida.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Solo.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Survivor.java" />
-        <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Jogo.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Client.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Server.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Transfer.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/PlayerVsPlayer.java" />
         <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Conexao.java" />
+        <option value="$PROJECT_DIR$/src/br/com/portadosdesesperados/Jogo.java" />
       </list>
     </option>
   </component>
@@ -272,7 +269,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533142854062" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533143451702" />
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/GitHub, Inc/GitHub Desktop.lnk" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -439,11 +436,18 @@
       <option name="project" value="LOCAL" />
       <updated>1533142821483</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Retirar a chamada a aumentarLevel() do método abrirPorta(), na Partida.">
+      <created>1533143352266</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1533143352266</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44353000" />
+    <option name="totallyTimeSpent" value="44553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="740" extended-state="6" />
@@ -539,7 +543,8 @@
     <MESSAGE value="Modos de Jogo" />
     <MESSAGE value="Modos Multiplayer-Survivor Ok. Inicio PlayerVsPlayer" />
     <MESSAGE value="Adicionado método Tipo Transder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionado método Tipo Transder" />
+    <MESSAGE value="Retirar a chamada a aumentarLevel() do método abrirPorta(), na Partida." />
+    <option name="LAST_COMMIT_MESSAGE" value="Retirar a chamada a aumentarLevel() do método abrirPorta(), na Partida." />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar:///opt/java/jdk-10.0.1/lib/src.zip!/java.base/java/lang/Object.java" />
@@ -603,16 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Jogo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="95" column="40" lean-forward="true" selection-start-line="95" selection-start-column="40" selection-end-line="95" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -686,6 +681,16 @@
             <element signature="imports" expanded="true" />
             <element signature="e#850#851#0" expanded="true" />
             <element signature="e#886#887#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/com/portadosdesesperados/Jogo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="100" column="48" selection-start-line="100" selection-start-column="48" selection-end-line="100" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
