@@ -31,7 +31,7 @@ public class Partida {
             throw new Exception("\n- É um monstro!!! Você perdeu!\n");
         } else {
             jogador.setPontuacao(jogador.getPontuacao() + (10 * getLevel().getQuantidadeMonstros()));
-            aumentarLevel();
+//            aumentarLevel();
             return "\n- É um Prêmio!!!!\n  Prêmio: " + porta.getPremio().getTipoPremio() + "\n";
         }
     }

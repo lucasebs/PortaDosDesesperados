@@ -9,7 +9,6 @@ public class Conexao {
     public Conexao() throws IOException {
         System.out.println("= Iniciando Conexão =");
         this.setTransfer();
-
         this.transfer.conectar();
     }
 
